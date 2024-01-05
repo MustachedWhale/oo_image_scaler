@@ -46,45 +46,53 @@ dir_dict = {'4x5in.jpg': '4x5 Aspect Ratio',
             'A5L.jpg': 'ISO Sizes'}
 
 # Portrait image sizes.
-size_dict_4x5 = {'8x10in.jpg': [2400, 3000],
-                 '12x15in.jpg': [3600, 4500],
-                 '16x20in.jpg': [4800, 6000]}
-size_dict_4x6 = {'6x9in.jpg': [1800, 2700],
-                 '8x12in.jpg': [2400, 3600],
-                 '10x15in.jpg': [3000, 4500],
-                 '12x18in.jpg': [3600, 5400],
-                 '16x24in.jpg': [4800, 7200],
-                 '20x30in.jpg': [6000, 9000],
-                 '24x36in.jpg': [7200, 10800]}
+size_dict_4x5 = {'8x10in.jpg': (2400, 3000),
+                 '12x15in.jpg': (3600, 4500),
+                 '16x20in.jpg': (4800, 6000)}
+size_dict_4x6 = {'6x9in.jpg': (1800, 2700),
+                 '8x12in.jpg': (2400, 3600),
+                 '10x15in.jpg': (3000, 4500),
+                 '12x18in.jpg': (3600, 5400),
+                 '16x24in.jpg': (4800, 7200),
+                 '20x30in.jpg': (6000, 9000),
+                 '24x36in.jpg': (7200, 10800)}
 size_dict_5x7 = {}
-size_dict_6x8 = {'9x12in.jpg': [2700, 3600],
-                 '12x16in.jpg': [3600, 4800],
-                 '15x20in.jpg': [4500, 6000],
-                 '18x24in.jpg': [5400, 7200]}
+size_dict_6x8 = {'9x12in.jpg': (2700, 3600),
+                 '12x16in.jpg': (3600, 4800),
+                 '15x20in.jpg': (4500, 6000),
+                 '18x24in.jpg': (5400, 7200)}
 size_dict_11x14 = {}
-size_dict_A5P = {'A4P.jpg': [2481, 3508],
-                 'A3P.jpg': [3508, 4962],
-                 'A2P.jpg': [4961, 7016],
-                 'A1P.jpg': [7016, 9934]}
+size_dict_A5P = {'A4P.jpg': (2481, 3508),
+                 'A3P.jpg': (3508, 4962),
+                 'A2P.jpg': (4961, 7016),
+                 'A1P.jpg': (7016, 9934)}
 
 # Landscape Image Sizes
-size_dict_5x4 = {'10x8in.jpg': [3000, 2400],
-                 '15x12in.jpg': [4500, 3600],
-                 '20x16in.jpg': [6000, 4800]}
-size_dict_6x4 = {'9x6in.jpg': [2700, 1800],
-                 '12x8in.jpg': [3600, 2400],
-                 '15x10in.jpg': [4500, 3000],
-                 '18x12in.jpg': [5400, 3600],
-                 '24x16in.jpg': [7200, 4800],
-                 '30x20in.jpg': [9000, 6000],
-                 '36x24in.jpg': [10800, 7200]}
+size_dict_5x4 = {'10x8in.jpg': (3000, 2400),
+                 '15x12in.jpg': (4500, 3600),
+                 '20x16in.jpg': (6000, 4800)}
+size_dict_6x4 = {'9x6in.jpg': (2700, 1800),
+                 '12x8in.jpg': (3600, 2400),
+                 '15x10in.jpg': (4500, 3000),
+                 '18x12in.jpg': (5400, 3600),
+                 '24x16in.jpg': (7200, 4800),
+                 '30x20in.jpg': (9000, 6000),
+                 '36x24in.jpg': (10800, 7200)}
 size_dict_7x5 = {}
-size_dict_8x6 = {}
+size_dict_8x6 = {'12x9in.jpg': (3600, 2700),
+                 '16x12in.jpg': (4800, 3600),
+                 '20x15in.jpg': (6000, 4500),
+                 '24x18in.jpg': (7200, 5400)}
 size_dict_14x11 = {}
-size_dict_A5L = {}
+size_dict_A5L = {'A4L.jpg': (3508, 2481),
+                 'A3L.jpg': (4961, 3508),
+                 'A2L.jpg': (7016, 4961),
+                 'A1L.jpg': (9934, 7016)}
 
 # Square Image Sizes
-size_dict_8x8in = {}
+size_dict_8x8in = {'10x10in.jpg': (3000, 3000),
+                   '12x12in.jpg': (3600, 3600),
+                   '16x16in.jpg': (4800, 4800)}
 
 size_dict = {"large": (1200, 800), "medium": (600, 400)}
 scaler = PhotoScaler("path/to/root/folder", size_dict)
