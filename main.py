@@ -95,6 +95,21 @@ size_dict_8x8 = {'10x10in.jpg': (3000, 3000),
                  '12x12in.jpg': (3600, 3600),
                  '16x16in.jpg': (4800, 4800)}
 
+# Dict of all sizes.
+size_dicts = {'4x5': size_dict_4x5,
+              '4x6': size_dict_4x6,
+              '5x7': size_dict_5x7,
+              '6x8': size_dict_6x8,
+              '11x14': size_dict_11x14,
+              'A5P': size_dict_A5P,
+              '5x4': size_dict_5x4,
+              '6x4': size_dict_6x4,
+              '7x5': size_dict_7x5,
+              '8x6': size_dict_8x6,
+              '14x11': size_dict_14x11,
+              'A5L': size_dict_A5L,
+              '8x8': size_dict_8x8}
+
 ## Main Code ##
 
 root_folder_path = sys.argv[1]
@@ -105,34 +120,9 @@ for ill_dir in ill_dir_list:
     for root, dirs, files in os.walk(ill_folder_path):
         for file in files:
             file_size = file.replace('in.jpg', '')
-            if file_size == '4x5':
-                size_dict = size_dict_4x5
-            elif file_size == '4x6':
-                size_dict = size_dict_4x6
-            elif file_size == '5x7':
-                size_dict = size_dict_5x7
-            elif file_size == '6x8':
-                size_dict = size_dict_6x8
-            elif file_size == '11x14':
-                size_dict = size_dict_11x14
-            elif file_size == 'A5P':
-                size_dict = size_dict_A5P
-            elif file_size == '5x4':
-                size_dict = size_dict_5x4
-            elif file_size == '6x4':
-                size_dict = size_dict_6x4
-            elif file_size == '7x5':
-                size_dict = size_dict_7x5
-            elif file_size == '8x6':
-                size_dict = size_dict_8x6
-            elif file_size == '14x11':
-                size_dict = size_dict_14x11
-            elif file_size == 'A5L':
-                size_dict = size_dict_A5L
-            elif file_size == '8x8':
-                size_dict = size_dict_8x8
-            else:
-                print('Undefined aspect ratio in {ill_dir}.')
+            size_dict = size_dicts.get(file_size)
+            if size_dict is None:
+                print(f'Undefined aspect ratio in {ill_dir}.')
                 exit()
     scaler = PhotoScaler(ill_folder_path, size_dict)
     scaler.scale_photos()
