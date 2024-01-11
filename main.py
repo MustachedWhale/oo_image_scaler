@@ -96,19 +96,19 @@ size_dict_8x8 = {'10x10in.jpg': (3000, 3000),
                  '16x16in.jpg': (4800, 4800)}
 
 # Dict of all sizes.
-size_dicts = {'4x5': size_dict_4x5,
-              '4x6': size_dict_4x6,
-              '5x7': size_dict_5x7,
-              '6x8': size_dict_6x8,
-              '11x14': size_dict_11x14,
-              'A5P': size_dict_A5P,
-              '5x4': size_dict_5x4,
-              '6x4': size_dict_6x4,
-              '7x5': size_dict_7x5,
-              '8x6': size_dict_8x6,
-              '14x11': size_dict_14x11,
-              'A5L': size_dict_A5L,
-              '8x8': size_dict_8x8}
+size_dicts = {'4x5in.jpg': size_dict_4x5,
+              '4x6in.jpg': size_dict_4x6,
+              '5x7in.jpg': size_dict_5x7,
+              '6x8in.jpg': size_dict_6x8,
+              '11x14in.jpg': size_dict_11x14,
+              'A5P.jpg': size_dict_A5P,
+              '5x4in.jpg': size_dict_5x4,
+              '6x4in.jpg': size_dict_6x4,
+              '7x5in.jpg': size_dict_7x5,
+              '8x6in.jpg': size_dict_8x6,
+              '14x11.jpg': size_dict_14x11,
+              'A5L.jpg': size_dict_A5L,
+              '8x8.jpg': size_dict_8x8}
 
 ## Main Code ##
 
@@ -118,9 +118,8 @@ ill_dir_list = os.listdir(root_folder_path)
 for ill_dir in ill_dir_list:
     ill_folder_path = os.path.join(root_folder_path, ill_dir)
     for root, dirs, files in os.walk(ill_folder_path):
-        for file in files:
-            file_size = file.replace('in.jpg', '')
-            size_dict = size_dicts.get(file_size)
+        for filename in files:
+            size_dict = size_dicts.get(filename)
             if size_dict is None:
                 print(f'Undefined aspect ratio in {ill_dir}.')
                 exit()
